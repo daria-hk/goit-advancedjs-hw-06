@@ -13,7 +13,6 @@ interface Page {
   };
 }
 
-
 const page1: Page = {
   title: 'The awesome page',
   likes: 100,

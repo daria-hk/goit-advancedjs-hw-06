@@ -11,13 +11,18 @@ type AllType = {
   weight: number
 }
 
-function compare (top, bottom): AllType {
+function compare(top: Partial<AllType>, bottom: Partial<AllType>): AllType {
   return {
-    name: top.name,
-    color: top.color,
-    position: bottom.position,
-    weight: bottom.weight,
-  }
+    name: top.name || 'undefined',
+    color: top.color || 'undefined',
+    position: bottom.position || 0,
+    weight: bottom.weight || 0,
+  };
 }
 
-export {};
+
+const topObject = { name: 'Object A', color: 'red' };
+const bottomObject = { position: 1, weight: 5 };
+
+console.log(compare(topObject, bottomObject)); 
+
